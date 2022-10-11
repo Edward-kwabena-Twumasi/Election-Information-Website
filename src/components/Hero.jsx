@@ -1,17 +1,19 @@
-import React, { useState, useEffect } from 'react';
+// import React, { useState, useEffect } from 'react';
+import background from "../assets/happy_people.jpg";
+
 
 const Hero=()=> {
-    return (  <>
-    <div className='text-white'>
-        <div className='max-w-[800px] mt-[-96px] w-full h-screen mx-auto text-center flex flex-col justify-center'>
-    <p className='text-[#00df9a] font-bold p-2'> GROWING WITH TECHNOLOGY</p>
-    <h1 className='md:text-6xl sm:text-5xl text-3xl font-bold md:py-6'>Grow with our innovative Technology</h1>
-    <div>
-        <p className='md:text-4xl sm:text-3xl text-xl font-bold'>Intuitive, smart, interactive ai software for</p>
+    return ( 
+
+    <div className='w-full h-full  mx-auto text-center flex flex-col justify-start text-white bg-[#9bbec4]'  style={{ backgroundImage: {background} }}>
+    <p className=' font-bold p-2 font-6xl text-[#1a1f26]' style={{fontSize:28,fontWeight:1000}}> MAKE AN INFORMED DECISION</p>
+    <h1 className='text-[#4a4b4d] ' style={{fontSize:20,fontWeight:900}}>Providing resources and tools to help voting-eligible citizens register and vote.</h1>
+    <img src={background} alt='happy people voters' className="h-30  bg-no-repeat bg-center bg-cover w-full"/>
+    {/* <div className='h-30  bg-no-repeat bg-center bg-cover w-full' style={{ backgroundImage: {background} }}>
+        hi my image
+    </div> */}
     </div>
-        </div>
-    </div>
-    </>);
+   );
 }
 
 export default Hero;
