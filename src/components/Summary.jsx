@@ -13,7 +13,7 @@ const Summary=()=> {
                     More than
                 </h1>
                 <h1 className="font-bold text-5xl"> 
-                   30 Million 
+                17,027,641
                 </h1>
                 <h1>
                    Registered Voters
@@ -30,18 +30,30 @@ const Summary=()=> {
                 constitencies accross the country
                 </h1>
             </div>
+            <div className="h-full bg-[#1a1f26] w-1/3 flex flex-col justify-start pt-6 gap-2 text-start pl-9 border border-l-2 border-l-white">
+            <h1 className="font-bold text-3xl">
+                   Total of
+                </h1>
+                <h1 className="font-bold text-5xl">
+                   17 Political 
+                </h1>
+                <h1>
+               Parties
+                </h1>
+            </div>
             <div className="h-full bg-[#4095d2] w-1/3 flex flex-col justify-start pt-6 gap-2 text-start pl-9">
             <h1 className="font-bold text-3xl">
                     Over
                 </h1>
                 <h1 className="font-bold text-5xl">
-                   360 Pollen stations
+                33,367 
                 </h1>
                 <h1>
-                  For Voters
+                Polling stations for Voters
                 </h1>
             </div>
         </div>
+        
         <div className="w-full h-3/6 bg-[#e0e4ee] pt-10">
          <Quote/>
         </div>
