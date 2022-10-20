@@ -9,7 +9,7 @@ const Navbar=({onIndexChange})=>{
     }
 
     return (
-        <div className="flex justify-between items-center h-24 mx-auto px-4 text-white bg-[#9bbec4]">
+        <div className="flex justify-between items-center h-24 mx-auto px-4 text-white bg-[#9bbec4] shadow-lg fixed w-screen">
            <h1 className=' text-3xl font-bold text-[#1a1f26]' onClick={event => onIndexChange(0)}>VoteInform</h1>
            <ul className="flex font-bold ">
             <li className="p-4" onClick={event => onIndexChange(1)}>About Us</li>
