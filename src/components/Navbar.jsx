@@ -16,7 +16,7 @@ const Navbar=({onIndexChange})=>{
             <li className="p-4" onClick={event => onIndexChange(2)}>Register To Vote</li>
             <li className="p-4" onClick={event => onIndexChange(3)}>Voting Information </li>
             <li className="p-4" onClick={event => onIndexChange(4)}>Media Center </li>
-            <li className="p-4" onClick={event => onIndexChange(5)}>Donate</li>
+            <li className="p-4" onClick={event => onIndexChange(5)}>Statistics</li>
            </ul>
            {/* <div onClick={handleNav} className="block md:hidden">
             {nav? <AiOutlineClose size={20}/>:<AiOutlineMenu size={20}/>}

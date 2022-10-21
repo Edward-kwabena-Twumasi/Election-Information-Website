@@ -1,10 +1,13 @@
-import image from "../assets/happy_people.jpg";
+// import image from "../assets/happy_people.jpg";
+import background from "../assets/happy_people.jpg";
+
 import NewsItem from "./NewsItem";
 
 const NewsPage=()=> {
+    const image="https://picsum.photos/200/300";
     const newsItems=[
         {
-            "image":"../assets/happy_people.jpg",
+            "image":{background},
             "stars":"5",
             "year":"2022",
             "kind":"News",
@@ -13,7 +16,7 @@ const NewsPage=()=> {
 
         },
         {
-            "image":{image},
+            "image":{background},
             "stars":"5",
             "year":"2022",
             "kind":"News",
@@ -22,7 +25,7 @@ const NewsPage=()=> {
 
         },
         {
-            "image":{image},
+            "image":{background},
             "stars":"5",
             "year":"2022",
             "kind":"News",
@@ -30,7 +33,7 @@ const NewsPage=()=> {
             "cast":"ussssssss",
 
         },{
-            "image":{image},
+            "image":{background},
             "stars":"5",
             "year":"2022",
             "kind":"News",
@@ -38,7 +41,7 @@ const NewsPage=()=> {
             "cast":"ussssssss",
 
         },{
-            "image":{image},
+            "image":{background},
             "stars":"5",
             "year":"2022",
             "kind":"News",
@@ -46,7 +49,7 @@ const NewsPage=()=> {
             "cast":"ussssssss",
 
         },{
-            "image":{image},
+            "image":{background},
             "stars":"5",
             "year":"2022",
             "kind":"News",
@@ -54,7 +57,7 @@ const NewsPage=()=> {
             "cast":"ussssssss",
 
         },{
-            "image":{image},
+            "image":{background},
             "stars":"5",
             "year":"2022",
             "kind":"News",
@@ -62,7 +65,7 @@ const NewsPage=()=> {
             "cast":"ussssssss",
 
         },{
-            "image":{image},
+            "image":{background},
             "stars":"5",
             "year":"2022",
             "kind":"News",
@@ -70,7 +73,7 @@ const NewsPage=()=> {
             "cast":"ussssssss",
 
         },{
-            "image":{image},
+            "image":{background},
             "stars":"5",
             "year":"2022",
             "kind":"News",
@@ -78,7 +81,7 @@ const NewsPage=()=> {
             "cast":"ussssssss",
 
         },{
-            "image":{image},
+            "image":{background},
             "stars":"5",
             "year":"2022",
             "kind":"News",
@@ -86,7 +89,7 @@ const NewsPage=()=> {
             "cast":"ussssssss",
 
         },{
-            "image":{image},
+            "image":{background},
             "stars":"5",
             "year":"2022",
             "kind":"News",
@@ -94,7 +97,7 @@ const NewsPage=()=> {
             "cast":"ussssssss",
 
         },{
-            "image":{image},
+            "image":{background},
             "stars":"5",
             "year":"2022",
             "kind":"News",
@@ -102,7 +105,7 @@ const NewsPage=()=> {
             "cast":"ussssssss",
 
         },{
-            "image":{image},
+            "image":{background},
             "stars":"5",
             "year":"2022",
             "kind":"News",
@@ -113,7 +116,7 @@ const NewsPage=()=> {
     ];
 
     return ( 
-    <div className="flex flex-col w-screen bg-white h-screen">
+    <div className="flex flex-col w-screen bg-white h-full">
         <h1 className="p-5 text-center font-bold text-4xl font-serif">News</h1>  
     <div className="grid grid-cols-3 p-5 w-full h-full">
     {newsItems.map(newsItem=><NewsItem news={newsItem}/>)}
