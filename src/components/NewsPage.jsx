@@ -3,7 +3,7 @@ import background from "../assets/happy_people.jpg";
 
 import NewsItem from "./NewsItem";
 
-const NewsPage=()=> {
+const MediaCenter=()=> {
     const image="https://picsum.photos/200/300";
     const newsItems=[
         {
@@ -131,4 +131,4 @@ const NewsPage=()=> {
    );
 }
 
-export default NewsPage;
+export default MediaCenter;

@@ -1,16 +1,24 @@
 
+import { useState } from 'react';
 import './App.css';
 import Hero from './components/Hero';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Summary from './components/Summary';
-import NewsPage from './components/NewsPage';
 import RegisterToVote from './components/RegisterToVote';
 import Statistics from './components/Statistics';
+import VotingInformation from './components/VotingInformation';
+import AboutUs from './components/AboutUs';
+import MediaCenter from './components/NewsPage';
+import * as React from 'react';
 
-
-
-import { useState } from 'react';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useLocation
+} from 'react-router-dom';
+import HomePage from './components/HomePage';
 // import background from "./assets/artificialintelligence.jpg";
 
                      
@@ -18,50 +26,41 @@ function App() {
   
   
   const [index,setIndex]=useState(0);
-  var [[xpos,ypos],setPos]=useState([20,200]);
-
-  const handleClick = event => {
-    console.log('Mouse hovered on item');
-    console.log(`Mouse X position: ${event.clientX}, Mouse Y position: ${event.clientY}`)
-   
-    console.log(event.target.name);
-
-    setPos([event.clientX,event.clientY])
-  };
   
   const onIndexChange=newIndex=>{
-
     setIndex(newIndex)
-}
-window.addEventListener('ready', (event) => {
-  
-  window.location.pathname=paths[index];
-  console.log('page is fully loaded');
-});
-
-var paths=["home","about-us","register","voting-information","news","Statistics"];
-
- var pages=[
-  <div>
-    <Hero/>
-    <Summary/>
-    <Footer/>
-  </div>,
-  <NewsPage/>,
-  <RegisterToVote/>,
-  <NewsPage/>,
-  <NewsPage/>,  
-  <Statistics/>
-]
-  return (
-    <div onClick={handleClick}>
-     <div className='text-white bg-slate-500 p-10 fixed mt-20'>{xpos} ..... {ypos}</div>
-     <Navbar onIndexChange={onIndexChange}/>
-     <div className='pt-24'>
-    { pages[index]}
-    </div>
-    </div>
+   }
    
+   
+
+  var paths=["/","/about","/register","/voting-information","/media-center","/Statistics"];
+
+  var pages=[
+    <HomePage/>,
+    <AboutUs/>,
+    <RegisterToVote/>,
+    <VotingInformation/>,
+    <MediaCenter/>,  
+    <Statistics/>
+  ]
+
+  return (
+    <>     
+      <Router> 
+        <Navbar onIndexChange={onIndexChange}/> 
+         <div className='pt-24'>
+          <Routes>
+           {/* <Route exact path={paths[index]} element={pages[index]}></Route> */}
+           <Route exact path="/" element={<HomePage/>}></Route>           
+           <Route exact path="/about" element={<AboutUs/>}></Route>
+           <Route exact path="/register" element={<RegisterToVote/>}></Route>
+           <Route exact path="/voting-information" element={<VotingInformation/>}></Route>
+           <Route exact path="/media-center" element={<MediaCenter/>}></Route>
+           <Route exact path="/Statistics" element={<Statistics/>}></Route>
+          </Routes>
+        </div>
+      </Router>
+    </>  
   );
 }
 
