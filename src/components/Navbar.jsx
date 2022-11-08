@@ -30,6 +30,7 @@ const Navbar=({onIndexChange})=>{
                 </li>
                 <li className="p-4" onClick={event => onIndexChange(5)}>
                 <Link to="/statistics">Statistics</Link>
+                <Link to="/developer">Developer</Link>
                 </li>
            </ul>
            {/* <div onClick={handleNav} className="block md:hidden">

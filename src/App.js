@@ -19,6 +19,7 @@ import {
   useLocation
 } from 'react-router-dom';
 import HomePage from './components/HomePage';
+import Developer from './developercomponents/developer';
 // import background from "./assets/artificialintelligence.jpg";
 
                      
@@ -32,17 +33,22 @@ function App() {
    }
    
    
-
-  var paths=["/","/about","/register","/voting-information","/media-center","/Statistics"];
-
-  var pages=[
+  var paths = [
+    "/",
+    "/about",
+    "/register",
+    "/voting-information",
+    "/media-center",
+    "/Statistics"
+              ];
+  var pages = [
     <HomePage/>,
     <AboutUs/>,
     <RegisterToVote/>,
     <VotingInformation/>,
     <MediaCenter/>,  
     <Statistics/>
-  ]
+              ]
 
   return (
     <>     
@@ -57,6 +63,7 @@ function App() {
            <Route exact path="/voting-information" element={<VotingInformation/>}></Route>
            <Route exact path="/media-center" element={<MediaCenter/>}></Route>
            <Route exact path="/Statistics" element={<Statistics/>}></Route>
+           <Route exact path="/developer" element={<Developer/>}></Route>
           </Routes>
         </div>
       </Router>
