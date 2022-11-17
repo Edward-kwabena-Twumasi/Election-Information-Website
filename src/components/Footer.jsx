@@ -7,10 +7,10 @@ const Footer=(props)=>{
 
     return(
         <div className="Footer bg-white">
-        <div className={" w-full  text-black  bg-white flex justify-center "+props.extrastyle}>
-          <ul className="p-12 w-1/3">
+        <div className={" w-full  text-black  bg-white lg:flex justify-center "+props.extrastyle}>
+          <ul className="p-12 lg:w-1/3 w-screen">
             <li className="font-bold text-xl">About Us</li>
-            <li>
+            <li className="text-start">
             Center for Voter Information is a non-profit,
              non-partisan partner organization to Voter Participation Center,
               both founded to provide resources and tools to help voting-eligible 
@@ -22,9 +22,9 @@ const Footer=(props)=>{
             </li>
             
           </ul>
-          <ul className="p-12 w-1/3">
+          <ul className="p-12 lg:w-1/3 w-screen">
             <li className="font-bold text-xl">Voting Information</li>
-            <li>
+            <li className="text-start">
             Can I vote early? Can I vote absentee? Do I need ID? When is the election?
 
             </li>
@@ -33,7 +33,7 @@ const Footer=(props)=>{
             </li>
             
           </ul>
-          <ul className="p-12 w-1/3">
+          <ul className="p-12 lg:w-1/3 w-screen">
             <li className="font-bold text-xl">Contact Us</li>
             <li className="flex gap-2">
             <SocialIcon url="https://gmail.com/"/>

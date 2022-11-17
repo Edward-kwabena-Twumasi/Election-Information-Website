@@ -19,7 +19,6 @@ import {
   useLocation
 } from 'react-router-dom';
 import HomePage from './components/HomePage';
-import Developer from './developercomponents/developer';
 // import background from "./assets/artificialintelligence.jpg";
 
                      
@@ -51,10 +50,10 @@ function App() {
               ]
 
   return (
-    <>     
+    <div className='App'>     
       <Router> 
         <Navbar onIndexChange={onIndexChange}/> 
-         <div className='pt-24'>
+         <div className='lg:pt-18'>
           <Routes>
            {/* <Route exact path={paths[index]} element={pages[index]}></Route> */}
            <Route exact path="/" element={<HomePage/>}></Route>           
@@ -63,11 +62,10 @@ function App() {
            <Route exact path="/voting-information" element={<VotingInformation/>}></Route>
            <Route exact path="/media-center" element={<MediaCenter/>}></Route>
            <Route exact path="/Statistics" element={<Statistics/>}></Route>
-           <Route exact path="/developer" element={<Developer/>}></Route>
           </Routes>
         </div>
       </Router>
-    </>  
+    </div>  
   );
 }
 

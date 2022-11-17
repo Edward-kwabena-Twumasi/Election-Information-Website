@@ -1,18 +1,30 @@
 // import React, { useState, useEffect } from 'react';
-import background from "../assets/happy_people.jpg";
+import imgurl from "../assets/happy_people.jpg";
+
 
 
 const Hero=()=> {
     return ( 
-
-    <div className='w-full h-full  mx-auto text-center flex flex-col justify-start text-white bg-[#9bbec4]'  style={{ backgroundImage: {background} }}>
-    <p className=' font-bold p-2 font-6xl text-[#1a1f26]' style={{fontSize:28,fontWeight:1000}}> MAKE AN INFORMED DECISION</p>
-    <h1 className='text-[#4a4b4d] ' style={{fontSize:20,fontWeight:900}}>Providing resources and tools to help voting-eligible citizens register and vote.</h1>
-    <img src={background} alt='happy people voters' className="h-30  bg-no-repeat bg-center bg-cover w-full"/>
-    {/* <div className='h-30  bg-no-repeat bg-center bg-cover w-full' style={{ backgroundImage: {background} }}>
-        hi my image
-    </div> */}
+ 
+    <div className='h-screen w-screen  text-center  text-white bg-no-repeat object-cover '  style={{ backgroundImage: "url("+imgurl+")" }}>
+       <div className="herotext absolute  z-20 flex flex-col">  
+        <p className='text-4xl font-extrabold shadow-xl'> GET INFORMED, DECIDE WELL</p>
+        <h1 className='font-thin text-white text-xl'>We exist to provide the neccesary voting assistance </h1>
+        <div className="self-center flex justify-center m-9 gap-5">
+           <div className="w-30 h-30 border border-2-white rounded-full p-7">
+             <h2 className="text-2xl font-bold"> 20</h2>
+           </div>
+           <div className="w-30 h-30 border border-2-white rounded-full p-7">
+             <h2 className="text-2xl font-bold"> 30</h2>
+           </div>
+           <div className="w-30 h-30 border border-2-white rounded-full p-7">
+             <h2 className="text-2xl font-bold"> 40</h2>
+           </div>
+        </div>
+      </div>
+      <div className="overlay absolute w-full h-full z-10  mt-18"></div>
     </div>
+    
    );
 }
 

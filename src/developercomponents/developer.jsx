@@ -1,4 +1,5 @@
 import background from "../assets/edward.png";
+import 'animate.css';
 
 const Developer=(props)=>{
 
@@ -12,9 +13,9 @@ const Developer=(props)=>{
                 </div>
                 <div className="words flex flex-col ">
                     <div className="intro mb-7 flex flex-col">
-                        <h1 className="font-extrabold lg:text-4xl text-2xl text-black mb-2">HELLO <span className="text-red-600">.</span></h1>
-                        <h1 className="font-extrabold lg:text-4xl text-2xl text-black mb-2">MY NAME IS <span className="text-yellow-600">.</span></h1>
-                        <h1 className="font-extrabold lg:text-4xl  text-black ">EDWARD KWABENA TWUMASI <span className="text-green-600">.</span></h1>
+                        <h1 className="font-extrabold lg:text-4xl text-2xl text-black mb-2 animate__animated animate__bounceInRight animate__faster">HELLO <span className="text-red-600">.</span></h1>
+                        <h1 className="font-extrabold lg:text-4xl text-2xl text-black mb-2 duration-150 animate__animated animate__fadeInUp animate__fast">MY NAME IS <span className="text-yellow-600">.</span></h1>
+                        <h1 className="font-extrabold lg:text-4xl  text-black duration-200 animate__animated animate__bounce animate__bounceInRight animate__slow">EDWARD KWABENA TWUMASI <span className="text-green-600">.</span></h1>
                     </div>
 
                     <div className="more-intro flex flex-col">
