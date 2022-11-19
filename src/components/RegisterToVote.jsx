@@ -100,11 +100,11 @@ const RegisterToVote=()=>{
     
 
     return (
-        <div className=" bg-white flex flex-col">
-            <div className="h-70 bg-black w-screen text-center">
+        <div className=" bg-white flex flex-col p-20 pl-0">
+            <div className="h-70 bg-black w-screen text-center  mt-5">
                 <div className="flex flex-col h-full w-full justify-center bg-slate-200">
-                    <div className="flex m-5 justify-center shadow-lg">
-                        <button className="button px-20 py-6 bg-blue-400 text-white">Register to Vote</button>
+                    <div className="flex m-5 justify-center  w-auto">
+                        <button className="button px-20 py-6 bg-blue-400 text-white shadow-xl">Register to Vote</button>
                         <button className="button px-20 py-6 bg-white text-slate-500">Check registration status</button>  
                     </div>
                     <h1 className="font-bold font-4xl font-serif m-2">How to Vote in your region</h1>

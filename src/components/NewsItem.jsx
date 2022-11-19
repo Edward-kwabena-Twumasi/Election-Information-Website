@@ -2,7 +2,7 @@ import background from "../assets/happy_people.jpg";
 
 export default function NewsItem({ news }) {
     return (
-      <div className="flex flex-col items-start m-5 h-50  shadow-md">
+      <div className="flex flex-col items-start h-50  shadow-md rounded-lg">
         
         
         <div className="w-full">

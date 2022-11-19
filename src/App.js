@@ -53,7 +53,7 @@ function App() {
     <div className='App'>     
       <Router> 
         <Navbar onIndexChange={onIndexChange}/> 
-         <div className='lg:pt-18'>
+         <div className='lg:pt-21'>
           <Routes>
            {/* <Route exact path={paths[index]} element={pages[index]}></Route> */}
            <Route exact path="/" element={<HomePage/>}></Route>           

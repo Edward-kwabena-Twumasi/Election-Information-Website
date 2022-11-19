@@ -19,5 +19,20 @@
 }
 .overlay{
   background-color: black;
-  opacity: 0.2;
+  opacity: 0.3;
+}
+.summarytitle{
+  margin-bottom: 3px;
+  border-bottom: 3px solid rgb(51 65 85);
+}
+.fadeOut{
+  opacity: 0.0;
+}
+.tab{
+ transition: 1s ease-in-out;
+  
+}
+.tabbar{
+  padding: 5px;
+
 }
