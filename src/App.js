@@ -5,7 +5,7 @@ import Hero from './components/Hero';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Summary from './components/Summary';
-import RegisterToVote from './components/RegisterToVote';
+import VotingFaqs from './components/VotingFaqs';
 import Statistics from './components/Statistics';
 import VotingInformation from './components/VotingInformation';
 import AboutUs from './components/AboutUs';
@@ -19,6 +19,7 @@ import {
   useLocation
 } from 'react-router-dom';
 import HomePage from './components/HomePage';
+import HowToVote from './components/VoteInRegion';
 // import background from "./assets/artificialintelligence.jpg";
 
                      
@@ -32,22 +33,7 @@ function App() {
    }
    
    
-  var paths = [
-    "/",
-    "/about",
-    "/register",
-    "/voting-information",
-    "/media-center",
-    "/Statistics"
-              ];
-  var pages = [
-    <HomePage/>,
-    <AboutUs/>,
-    <RegisterToVote/>,
-    <VotingInformation/>,
-    <MediaCenter/>,  
-    <Statistics/>
-              ]
+
 
   return (
     <div className='App'>     
@@ -58,8 +44,9 @@ function App() {
            {/* <Route exact path={paths[index]} element={pages[index]}></Route> */}
            <Route exact path="/" element={<HomePage/>}></Route>           
            <Route exact path="/about" element={<AboutUs/>}></Route>
-           <Route exact path="/register" element={<RegisterToVote/>}></Route>
            <Route exact path="/voting-information" element={<VotingInformation/>}></Route>
+           <Route path="/voting-information/:id" element={<HowToVote/>}></Route>
+           <Route exact path="/voting-faqs" element={<VotingFaqs/>}></Route>
            <Route exact path="/media-center" element={<MediaCenter/>}></Route>
            <Route exact path="/Statistics" element={<Statistics/>}></Route>
           </Routes>

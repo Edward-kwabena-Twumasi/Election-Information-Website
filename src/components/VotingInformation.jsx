@@ -1,52 +1,71 @@
+import RegionItem from "./RegionItem";
+import {useRef, useState} from 'react';
+import { regions } from "../data.js/regions";
+import MapComponent from "./MapComponent";
+import {
+    Link
+  } from 'react-router-dom';
 
 const VotingInformation=()=>{
+    
+    
+    var [[xpos,ypos],setPos]=useState([50,200]);
+    const [searchSuggestions,setSearchSuggestions]=useState([]);
+    var [selected,setSelected]=useState("");
+
+    const handleInputChange= event => {
+ if (event.target.value.toString().length>0) {
+    setSearchSuggestions(regions.filter((region)=>region.name.toLowerCase().includes(event.target.value.toLowerCase())))
+   
+ } else {
+    setSearchSuggestions([])
+ }
+        
+      };
+    
+    // const handleToolTip = event => {
+    
+    //     const id= event.target.id;
+    //     console.log(id)
+    //     const region=regions.filter(region=>region.id===id)[0]
+    //     console.log(region)
+    //     setSelected(region.name)
+
+    //     setPos([event.clientX,event.clientY])
+    //   };
+    //  const navigateTo=()=>{
+
+    //  } 
+    
+    
 
     return (
-      <div className="h-screen bg-white p-20 overflow-auto">
-        <div className="flex flex-col justify-start m-15 pt-5">
-          <h1 className="font-light text-4xl ">Frequently Asked Questions</h1>
-          <div className="question flex flex-col w-screen mt-5">
-            <div className="flex flex-col w-3/4">
-              <div className="h-[60px] rounded-md bg-white shadow-xl w-full flex justify-between px-3">
-                  <h1 className="text-xl mt-3">When is the next election period?</h1>
-                  <button className="text-5xl font-light"> + </button>
+        <div className=" bg-white flex flex-col p-20 pl-0">     
+                <div className="flex flex-col w-full justify-center bg-white"> 
+                    <h1 className="font-bold text-4xl font-serif m-3 mt-8 self-center">Where to vote</h1>         
+                    <input onChange={handleInputChange} className="lg:w-2/3 w-3/4 border border-slate-500 rounded-lg h-10 mb-20 mt-2 self-center  " type="text"></input>
+
                </div>
-               <div className="h-[200px] rounded-bl-lg rounded-br-lg shadow-lg bg-slate-300 p-5">
-               <p>
-                The next election period is in the year 2024
-               </p>
-              </div>
+            <ul className={searchSuggestions.length?"searchsuggestions flex flex-col justify-start self-center w-3/4  m-2 absolute mt-20 z-100 p-10 shadow-2xl rounded-lg":"hidden"}>
+                     {searchSuggestions.map((region,index)=>
+                     <Link key={index} to={region.id} className=" p-3 " onClick={()=>setSearchSuggestions([])}>{region.name}
+                     </Link>)}
+            </ul>
+            <div className=" m-30 flex flex-col justify-center">
+                <h1 className="text-black uppercase font-bold self-center mt-7">Find information specific to your region</h1> 
+                <h3 className={`p-4 bg-white  rounded-md absolute z-50 tooltip`}>     
+                    {selected}
+                </h3>
+                <MapComponent/>
             </div>
-          </div>
-          <div className="question flex flex-col w-screen mt-5">
-            <div className="flex flex-col w-3/4">
-              <div className="h-[60px] rounded-md bg-white shadow-xl w-full flex justify-between px-3">
-                  <h1 className="text-xl mt-3">When is the next election period?</h1>
-                  <button className="text-5xl font-light"> + </button>
-               </div>
-               <div className="h-[200px] rounded-bl-lg rounded-br-lg shadow-lg bg-slate-300 p-5">
-               <p>
-                Who is likely to win the next election?
-               </p>
-              </div>
+           
+            <div className=" p-40">
+                <div className="grid grid-cols-4 justify-between gap-3 p-5  ">
+                 {regions.map((region,index)=><Link to={region.id}><RegionItem region={region} key={index}/></Link> )}
+                </div>
             </div>
-          </div>
-          <div className="question flex flex-col w-screen mt-5">
-            <div className="flex flex-col w-3/4">
-              <div className="h-[60px] rounded-md bg-white shadow-xl w-full flex justify-between px-3">
-                  <h1 className="text-xl mt-3">When is the next election period?</h1>
-                  <button className="text-5xl font-light"> + </button>
-               </div>
-               <div className="h-[200px] rounded-bl-lg rounded-br-lg shadow-lg bg-slate-300 p-5">
-               <p>
-                Where can I register?
-               </p>
-              </div>
-            </div>
-          </div>
         </div>
-      </div>
-          );
-  }
+    );
+}
 
 export default VotingInformation;

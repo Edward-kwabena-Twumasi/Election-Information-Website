@@ -17,7 +17,7 @@ const Navbar=({onIndexChange})=>{
    }
 
     return (
-        <div className="nav justify-between items-center p-4 pl-0  px-4 text-white bg-white shadow-lg fixed z-20 w-screen flex">
+        <div className="nav justify-between items-center p-4 pl-0  px-4 text-white bg-white shadow-lg fixed z-20 w-screen flex z-50">
             <h1 className={'text-black text-xl font-semibold  font-serif'} onClick={event => setselected(0)}> 
             <Link to="/" className="ml-7">Election Hub</Link>
             </h1>
@@ -26,10 +26,10 @@ const Navbar=({onIndexChange})=>{
                   <Link to="/about"> About Us</Link>
                 </li>
                 <li className={selected===2? "font-semibold text-slate-900":'font-thin text-black' } onClick={event => updateSelected(2)}>
-                  <Link to="/register">Register</Link>
+                  <Link to="/voting-information">Voting Information</Link>
                 </li>
                 <li className={selected===3? "font-semibold text-slate-900":'font-thin text-black' } onClick={event => updateSelected(3)}>
-                  <Link to="/voting-information">Voting FAQs</Link>
+                  <Link to="/voting-faqs">Voting FAQs</Link>
                 </li>
                 <li className={selected===4? "font-semibold text-slate-900":'font-thin text-black' } onClick={event => updateSelected(4)}>
                   <Link to="/media-center"> Media Center</Link>

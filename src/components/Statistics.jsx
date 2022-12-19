@@ -1,76 +1,62 @@
 import React, { Component } from 'react';
-import {CanvasJSChart} from 'canvasjs-react-charts';
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
+import { Doughnut,Pie,Bar } from 'react-chartjs-2';
+ChartJS.register(ArcElement, Tooltip, Legend);
+
 class Statistics extends Component {
 	render() {
-		const piechartOptions = {
-			exportEnabled: true,
-			animationEnabled: true,
-			title: {
-				text: "Website Traffic Sources"
-			},
-			data: [{
-				type: "pie",
-				startAngle: 75,
-				toolTipContent: "<b>{label}</b>: {y}%",
-				showInLegend: "true",
-				legendText: "{label}",
-				indexLabelFontSize: 16,
-				indexLabel: "{label} - {y}%",
-				dataPoints: [
-					{ y: 18, label: "Direct" },
-					{ y: 40, label: "Organic Search" },
-					{ y: 9, label: "Paid Search" },
-					{ y: 14, label: "Referral" },
-					{ y: 19, label: "Social" }
-				]
-			}]
-		}
-        const barchartOptions = {
-			animationEnabled: true,
-			theme: "light2",
-			title:{
-				text: "Most Popular Social Networking Sites"
-			},
-			axisX: {
-				title: "Social Network",
-				reversed: true,
-			},
-			axisY: {
-				title: "Monthly Active Users",
-				includeZero: true,
-				labelFormatter: this.addSymbols
-			},
-			data: [{
-				type: "bar",
-				dataPoints: [
-					{ y:  2200000000, label: "Facebook" },
-					{ y:  1800000000, label: "YouTube" },
-					{ y:  800000000, label: "Instagram" },
-					{ y:  563000000, label: "Qzone" },
-					{ y:  376000000, label: "Weibo" },
-					{ y:  336000000, label: "Twitter" },
-					{ y:  330000000, label: "Reddit" }
-				]
-			}]
-		}
+		
+		 const data = {
+			labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+			datasets: [
+			  {
+				label: '# of Votes',
+				data: [12, 19, 3, 5, 2, 3],
+				backgroundColor: [
+				  'rgba(255, 99, 132, 0.2)',
+				  'rgba(54, 162, 235, 0.2)',
+				  'rgba(255, 206, 86, 0.2)',
+				  'rgba(75, 192, 192, 0.2)',
+				  'rgba(153, 102, 255, 0.2)',
+				  'rgba(255, 159, 64, 0.2)',
+				],
+				borderColor: [
+				  'rgba(255, 99, 132, 1)',
+				  'rgba(54, 162, 235, 1)',
+				  'rgba(255, 206, 86, 1)',
+				  'rgba(75, 192, 192, 1)',
+				  'rgba(153, 102, 255, 1)',
+				  'rgba(255, 159, 64, 1)',
+				],
+				borderWidth: 1,
+			  },
+			],
+		  };
 
 		return (
 
-            <div className='bg-white flex flex-col justify-center h-full p-10 gap-6'>
-                <h1 className='font-bold font-serif text-5xl uppercase text-center m-6'>Statistics</h1>
-                <div>
-                    <CanvasJSChart options = {piechartOptions}
-                    /* onRef={ref => this.chart = ref} */
-                    />
-                {/*You can get reference to the chart instance as shown above using onRef. This allows you to access all chart properties and methods*/}
-                </div>
-            
-                <div>
-                    <CanvasJSChart options = {barchartOptions}
-                        /* onRef={ref => this.chart = ref} */
-                    />
-                {/*You can get reference to the chart instance as shown above using onRef. This allows you to access all chart properties and methods*/}
-                </div>
+            <div className='bg-white flex flex-col justify-center h-screen p-10 gap-6'>
+                <h1 className='font-bold font-serif text-3xl uppercase text-center m-6 self-start'>Statistics</h1>
+				<div className='grid grid-cols-2 m-3 p-2 divide-x-2 rounded-l-xl shadow-2xl'>
+			   <canvas>				
+				<Doughnut data={data} options={{
+          plugins: {
+            title: {
+              display: true,
+              text: "Doughnut chart"
+            }
+          }
+        }}/>
+				
+                </canvas>	
+				<canvas>				
+				<Pie data={data} />
+                </canvas>	
+				
+
+				</div>
+					
+               
          </div>
         
 		);
