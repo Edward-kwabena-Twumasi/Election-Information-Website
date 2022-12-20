@@ -3,8 +3,8 @@ import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Doughnut,Pie,Bar } from 'react-chartjs-2';
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-class Statistics extends Component {
-	render() {
+const Statistics =()=> {
+
 		
 		 const data = {
 			labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
@@ -32,26 +32,25 @@ class Statistics extends Component {
 			  },
 			],
 		  };
-
+		 const options={
+			plugins: {
+			  title: {
+				display: true,
+				text: "Doughnut chart"
+			  }
+			}
+		  };
 		return (
 
             <div className='bg-white flex flex-col justify-center h-screen p-10 gap-6'>
                 <h1 className='font-bold font-serif text-3xl uppercase text-center m-6 self-start'>Statistics</h1>
-				<div className='grid grid-cols-2 m-3 p-2 divide-x-2 rounded-l-xl shadow-2xl'>
-			   <canvas>				
-				<Doughnut data={data} options={{
-          plugins: {
-            title: {
-              display: true,
-              text: "Doughnut chart"
-            }
-          }
-        }}/>
 				
-                </canvas>	
-				<canvas>				
-				<Pie data={data} />
-                </canvas>	
+				<div className='grid grid-cols-2 m-3 p-2 divide-x-2 rounded-l-xl shadow-2xl h-[400px]'>
+			  		
+				<Doughnut data={data} options={options} height="100px" width="100px"/>
+				
+							
+				<Pie data={data} options={options} height="100px" width="100px"/>
 				
 
 				</div>
@@ -61,5 +60,5 @@ class Statistics extends Component {
         
 		);
 	}
-}
+
 export default Statistics;                        

@@ -20,6 +20,7 @@ import {
 } from 'react-router-dom';
 import HomePage from './components/HomePage';
 import HowToVote from './components/VoteInRegion';
+import Find from './components/find';
 // import background from "./assets/artificialintelligence.jpg";
 
                      
@@ -46,6 +47,7 @@ function App() {
            <Route exact path="/about" element={<AboutUs/>}></Route>
            <Route exact path="/voting-information" element={<VotingInformation/>}></Route>
            <Route path="/voting-information/:id" element={<HowToVote/>}></Route>
+           <Route path="/voting-information/:id/find" element={<Find/>}></Route>
            <Route exact path="/voting-faqs" element={<VotingFaqs/>}></Route>
            <Route exact path="/media-center" element={<MediaCenter/>}></Route>
            <Route exact path="/Statistics" element={<Statistics/>}></Route>

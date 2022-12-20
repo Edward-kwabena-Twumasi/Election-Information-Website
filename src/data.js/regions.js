@@ -111,7 +111,7 @@ export  const regions=[
         
         "name":"upper west Region",
         "seats":11,
-        "id":"GHUE",
+        "id":"GHUW",
         "img":upw
 
 

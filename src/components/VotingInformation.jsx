@@ -1,41 +1,54 @@
 import RegionItem from "./RegionItem";
-import {useRef, useState} from 'react';
+import { useRef, useState,useCallback} from 'react';
 import { regions } from "../data.js/regions";
 import MapComponent from "./MapComponent";
 import {
-    Link
+    Link, useNavigate
   } from 'react-router-dom';
+import { Tooltip } from "chart.js";
+import { useEffect } from "react";
 
 const VotingInformation=()=>{
     
-    
-    var [[xpos,ypos],setPos]=useState([50,200]);
+    const navigate=useNavigate()
+    var [pos,setPos]=useState({x:70,y:50});
+
     const [searchSuggestions,setSearchSuggestions]=useState([]);
-    var [selected,setSelected]=useState("");
+    const [selected,setSelected]=useState({});
+
 
     const handleInputChange= event => {
- if (event.target.value.toString().length>0) {
-    setSearchSuggestions(regions.filter((region)=>region.name.toLowerCase().includes(event.target.value.toLowerCase())))
-   
- } else {
-    setSearchSuggestions([])
- }
+        if (event.target.value.toString().length>0) {
+            setSearchSuggestions(regions.filter((region)=>region.name.toLowerCase().includes(event.target.value.toLowerCase())))
+        
+        } else {
+            setSearchSuggestions([])
+        }
         
       };
+      useEffect(()=>{
+        Tooltip(pos.x,pos.y)
+      })
     
-    // const handleToolTip = event => {
-    
-    //     const id= event.target.id;
-    //     console.log(id)
-    //     const region=regions.filter(region=>region.id===id)[0]
-    //     console.log(region)
-    //     setSelected(region.name)
+    const showToolTip = event => {
 
-    //     setPos([event.clientX,event.clientY])
-    //   };
-    //  const navigateTo=()=>{
+        const id= event.target.id;
+        const region=regions.filter(region=>region.id===id)[0]
+        setSelected(region)
+        setPos([event.offsetX+50,event.offsetY+50])
+        Tooltip(pos.x,pos.y)
+      };
 
-    //  } 
+     const navigateTo=(route)=>{
+      navigate(route)
+     } 
+
+
+     let Tooltip=(x,y)=>{
+      return  <h3 className={`bg-red-500 text-white rounded-md `} style={{position:"absolute",marginBottom:`${y}px`,marginLeft:`${x}px`,zIndex:"100"}}>     
+      {selected.name} 
+  </h3>
+     }
     
     
 
@@ -53,15 +66,17 @@ const VotingInformation=()=>{
             </ul>
             <div className=" m-30 flex flex-col justify-center">
                 <h1 className="text-black uppercase font-bold self-center mt-7">Find information specific to your region</h1> 
-                <h3 className={`p-4 bg-white  rounded-md absolute z-50 tooltip`}>     
-                    {selected}
-                </h3>
-                <MapComponent/>
+               
+                <div className="self-center p-5 w-[auto]">
+                    <Tooltip></Tooltip>
+                    <MapComponent showToolTip={showToolTip} navigateTo={()=>navigateTo(selected?.id)}/>
+                </div>
+                
             </div>
            
             <div className=" p-40">
                 <div className="grid grid-cols-4 justify-between gap-3 p-5  ">
-                 {regions.map((region,index)=><Link to={region.id}><RegionItem region={region} key={index}/></Link> )}
+                 {regions.map((region,index)=><Link key={index} to={region.id}><RegionItem region={region} id={index}/></Link> )}
                 </div>
             </div>
         </div>

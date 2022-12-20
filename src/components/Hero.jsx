@@ -9,7 +9,6 @@ const Hero=()=> {
     <div className='h-screen w-screen  text-center  text-white bg-no-repeat object-cover '  style={{ backgroundImage: "url("+imgurl+")" }}>
        <div className="herotext absolute  z-20 flex flex-col">  
         <p className='text-4xl font-extrabold'> GET INFORMED, DECIDE WELL</p>
-        <h1 className='font-medium text-slate-700 text-2xl p-3 rounded-xl bg-white w-1/3 self-center m-4 opacity-90 shadow-lg'>Good information,all the time</h1>
         <div className="self-center flex justify-center gap-5">
          <h1 className="text-6xl font-extrabold text-red-700">.</h1>
          <h1 className="text-6xl font-extrabold text-yellow-700 translate-y-9">.</h1>

@@ -39,11 +39,9 @@ const Footer=(props)=>{
           <ul className="p-12 lg:w-1/3 w-screen">
             <li className="font-bold text-xl">Contact Us</li>
             <li className="flex gap-2">
-            <SocialIcon url="https://gmail.com/"/>
                 <h1> createdliving1000@gmail.com</h1>
             </li>
             <li className="flex gap-2">
-            <SocialIcon url="https://gmail.com/"/>
                 <h1> +233 552489602</h1>
             </li>
           </ul>
