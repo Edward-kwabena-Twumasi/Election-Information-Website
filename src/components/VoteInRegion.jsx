@@ -1,4 +1,4 @@
-import {useRef, useState,useEffect} from 'react';
+import { useState,useEffect} from 'react';
 import { Link, useParams } from "react-router-dom";
 import { regions } from "../data.js/regions";
 import Faq from './Faq';
@@ -33,7 +33,7 @@ useEffect(()=>{
                     <Link className='hover:text-blue-600 hover:font-bold' to={"find"}>
                      <h4 className='  rounded-md m-3'><span className='font-bold font-serif'>{region.seats}</span> Districts & Constituencies</h4>
                     </Link>
-                    <h4 className='  rounded-md m-3'><span className='font-bold font-serif'>{region.seats}</span> polling stations</h4>
+                    <h4 className='  rounded-md m-3'><span className='font-bold font-serif'>{region.seats+2}</span> Electoral areas</h4>
                 </div>
                 <h2 className='header-text text-xl m-3 font-semibold'>Districts map</h2>
                 <img src={region.img} alt="region" className='dist-map shadow-2xl'></img>

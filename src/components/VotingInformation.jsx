@@ -1,17 +1,17 @@
 import RegionItem from "./RegionItem";
-import { useRef, useState,useCallback} from 'react';
+import {  useState} from 'react';
 import { regions } from "../data.js/regions";
 import MapComponent from "./MapComponent";
 import {
     Link, useNavigate
   } from 'react-router-dom';
-import { Tooltip } from "chart.js";
+import { Tooltip as ChartjsTooltip} from "chart.js";
 import { useEffect } from "react";
 
 const VotingInformation=()=>{
     
     const navigate=useNavigate()
-    var [pos,setPos]=useState({x:70,y:50});
+    var [pos,setPos]=useState({x:70,y:200});
 
     const [searchSuggestions,setSearchSuggestions]=useState([]);
     const [selected,setSelected]=useState({});
