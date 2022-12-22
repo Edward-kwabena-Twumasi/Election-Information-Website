@@ -4,53 +4,45 @@
 
 const Summary=()=> {
     return ( 
-    <div className="w-full p-10 text-center flex flex-col justify-between text-slate-700 ">
-        <h2 className="summarytitle self-center text-center font-serif text-3xl ">Summary Statistics</h2>
-        <div className='w-full h-3/6 text-center lg:flex  justify-between text-slate-700 mb-5 gap-3'  >
-            <div className="h-full  lg:w-1/3 w-full flex flex-col justify-start gap-2 rounded-md p-10 text-start  ">
+    <div className="w-full p-10 text-center flex flex-col justify-between text-slate-700 bg-slate-700">
+        <h2 className="summarytitle self-center text-center font-serif text-3xl text-white mb-4">Summary Statistics</h2>
+       
+        <div className='w-full h-3/6 text-center lg:flex  justify-between text-white mb-5 gap-3'  >
+            <div className="stat-card h-full  lg:w-1/3 w-full flex flex-col justify-start gap-2 rounded-md p-10 text-start shadow-xl ">
                 <h1 className="font-normal lg:text-xl text-xl">
                     More than
                 </h1>
-                <h1 className="font-bold lg:text-4xl text-2xl font-serif border border-1-black"> 
+                <h1 className="font-bold lg:text-4xl text-2xl font-serif "> 
                 17,027,641
                 </h1>
                 <h1>
                    Registered Voters
                 </h1>
             </div>
-            <div className="h-full  lg:w-1/3 w-full flex flex-col justify-start gap-2 rounded-md p-10 text-start ">
-            <h1 className="font-normal lg:text-xl text-xl">
-                   Total of
+            <div className="stat-card h-full  lg:w-1/3 w-full flex flex-col justify-start gap-2 rounded-md p-10 text-start shadow-xl ">
+                <h1 className="font-normal lg:text-xl text-xl">
+                    Total
                 </h1>
-                <h1 className="font-bold lg:text-4xl text-2xl font-serif border border-1-black">
-                   200 Electoral 
-                </h1>
-                <h1>
-                constitencies accross the country
-                </h1>
-            </div>
-            <div className="h-full  lg:w-1/3 w-full flex flex-col justify-start gap-2 rounded-md p-10 text-start  border border-l-2 border-l-white">
-            <h1 className="font-normal lg:text-xl text-xl">
-                   Total of
-                </h1>
-                <h1 className="font-bold lg:text-4xl text-2xl font-serif border border-1-black">
-                   17 Political 
+                <h1 className="font-bold lg:text-4xl text-2xl font-serif "> 
+                17
                 </h1>
                 <h1>
-               Parties
+                   Political parties
                 </h1>
             </div>
-            <div className="h-full  lg:w-1/3 w-full flex flex-col justify-start gap-2 rounded-md p-10 text-start ">
-            <h1 className="font-normal lg:text-xl text-xl">
-                    Over
+            <div className="stat-card h-full  lg:w-1/3 w-full flex flex-col justify-start gap-2 rounded-md p-10 text-start shadow-xl ">
+                <h1 className="font-normal lg:text-xl text-xl">
+                    Total
                 </h1>
-                <h1 className="font-bold lg:text-4xl text-2xl font-serif border border-1-black">
-                33,367 
+                <h1 className="font-bold lg:text-4xl text-2xl font-serif "> 
+                250
                 </h1>
                 <h1>
-                Polling stations for Voters
+                   Electoral Constituencies
                 </h1>
             </div>
+            
+        
         </div>
         
     

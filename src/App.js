@@ -1,10 +1,7 @@
 
 import { useState } from 'react';
 import './App.css';
-import Hero from './components/Hero';
 import Navbar from './components/Navbar';
-import Footer from './components/Footer';
-import Summary from './components/Summary';
 import VotingFaqs from './components/VotingFaqs';
 import Statistics from './components/Statistics';
 import VotingInformation from './components/VotingInformation';
@@ -15,8 +12,7 @@ import * as React from 'react';
 import {
   BrowserRouter as Router,
   Routes,
-  Route,
-  useLocation
+  Route
 } from 'react-router-dom';
 import HomePage from './components/HomePage';
 import HowToVote from './components/VoteInRegion';

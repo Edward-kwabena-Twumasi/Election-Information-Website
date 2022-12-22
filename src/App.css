@@ -1,11 +1,23 @@
 
-.herotext{
+.hero-text{
   width: 80%;
   max-width: 90%;
   margin-left:9%;
-  margin-top: 15%;
-  padding: 30px;
+  padding: 70px;
+  background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+  margin-top: 150px;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+
 }
+.stat-card{
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+-webkit-backdrop-filter: blur(10px);
+backdrop-filter: blur(10px);
+}
+
 .App{
   box-sizing: border-box;
   overflow: hidden;

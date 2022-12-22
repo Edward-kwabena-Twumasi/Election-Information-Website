@@ -6,10 +6,10 @@ import Summary from "./Summary";
 const HomePage=()=>{
 
     return (
-        <div className='homepage bg-white w-screen'>
+        <div className='homepage h-auto bg-white w-screen'>
         <Hero/>
-        <Summary/>
         <Quote/>
+        <Summary/>
         <Footer/>
         </div>
           );
