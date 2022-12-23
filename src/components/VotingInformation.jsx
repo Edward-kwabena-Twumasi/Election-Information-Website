@@ -5,13 +5,13 @@ import MapComponent from "./MapComponent";
 import {
     Link, useNavigate
   } from 'react-router-dom';
-import { Tooltip as ChartjsTooltip} from "chart.js";
-import { useEffect } from "react";
+import { useRef } from "react";
 
 const VotingInformation=()=>{
+    const toolTipRef=useRef()
     
     const navigate=useNavigate()
-    var [pos,setPos]=useState({x:70,y:200});
+    var [pos,setPos]=useState({x:70,y:70});
 
     const [searchSuggestions,setSearchSuggestions]=useState([]);
     const [selected,setSelected]=useState({});
@@ -26,17 +26,21 @@ const VotingInformation=()=>{
         }
         
       };
-      useEffect(()=>{
-        Tooltip(pos.x,pos.y)
-      })
+     
     
     const showToolTip = event => {
+        
+        document.onmousemove=(mevent)=>{
+        setPos({x:mevent.clientX,y:mevent.clientY})
+        }
+        let target= document.querySelector(".tooltip");
 
+        target.classList.add("animate-tooltip")
+        target.style.top=pos.x-100 +'px'
+        target.style.left=pos.y/3 +'px'
         const id= event.target.id;
         const region=regions.filter(region=>region.id===id)[0]
         setSelected(region)
-        setPos([event.offsetX+50,event.offsetY+50])
-        Tooltip(pos.x,pos.y)
       };
 
      const navigateTo=(route)=>{
@@ -44,11 +48,7 @@ const VotingInformation=()=>{
      } 
 
 
-     let Tooltip=(x,y)=>{
-      return  <h3 className={`bg-red-500 text-white rounded-md `} style={{position:"absolute",marginBottom:`${y}px`,marginLeft:`${x}px`,zIndex:"100"}}>     
-      {selected.name} 
-  </h3>
-     }
+  
     
     
 
@@ -68,7 +68,9 @@ const VotingInformation=()=>{
                 <h1 className="text-black uppercase font-bold self-center mt-7">Find information specific to your region</h1> 
                
                 <div className="self-center p-5 w-[auto]">
-                    <Tooltip></Tooltip>
+                  <h3 className={`bg-red-500 text-white rounded-md absolute tooltip`} ref={toolTipRef}>     
+                    {selected.name} 
+                  </h3>
                     <MapComponent showToolTip={showToolTip} navigateTo={()=>navigateTo(selected?.id)}/>
                 </div>
                 

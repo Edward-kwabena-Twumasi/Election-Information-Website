@@ -1,4 +1,8 @@
 
+:root{
+  --hover-color:rgb(51 65 85 )
+
+}
 .hero-text{
   width: 80%;
   max-width: 90%;
@@ -11,6 +15,39 @@
   backdrop-filter: blur(10px);
 
 }
+.read-more:hover{
+  
+transform: rotate(-30deg);
+transition: 300ms ease;
+background-color: var(--hover-color);
+border: 0px;
+}
+
+.read-more-t:hover::before{
+  content: "read more";
+  
+}
+.animate-tooltip{
+  padding: 3px;
+  animation: animateT 300ms ease-in-out ;
+  animation-delay: 100ms;
+}
+@keyframes animateT {
+  from{
+   transform: scale(0.9);
+   
+  }
+  to{
+    transform: scale(1);
+  }
+}
+.read-more-t:hover{
+  width: auto;
+  transition: 1s ease-in-out;
+  background-color: var(--hover-color);
+
+}
+
 .stat-card{
   background-color: rgba(255, 255, 255, 0.3);
   border-radius: 10px;

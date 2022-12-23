@@ -38,7 +38,7 @@ const Navbar=({onIndexChange})=>{
                   <Link to="/statistics">Statistics</Link>
                 </li>
            </ul>
-           <div onClick={handleNav} className=" lg:hidden text-black">
+           {/* <div onClick={handleNav} className=" lg:hidden text-black">
             {nav? <h2>Menu</h2>:<h2>Close</h2>}
             </div>
            <div className={!nav?"absolute z-30  bg-white border-r w-full border-r-gray-900 h-[300px] ease-in-out duration-500 lg:hidden mt-[350px]":"absolute z-30  h-[0px] duration-500 fadeOut"}>
@@ -49,7 +49,7 @@ const Navbar=({onIndexChange})=>{
                     <li className="p-4 border-gray-600" onClick={handleNav} >Media Center </li>
                     <li className="p-4" onClick={handleNav} >Statistics</li>
                 </ul>
-           </div>
+           </div> */}
         </div>
 
     );
