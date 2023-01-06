@@ -1,10 +1,10 @@
-### Project descrption
-The project aims to setup a website to give information about elections to voters in Ghana
+## Project descrption
+A comprehensive and informative website being developed to aid Ghanaians make informaed decisions during elections
 
-### Technology Stack used
+## Technology Stack used
 The main language used is javascript.
-The technologies used here are reat js and tailwind css for the front end.
+The technologies used here are reatjs and tailwind css for the front end.
 In the backed , node js and express will be used and an sql database will be used too.
-For the start, sqlite database could be used but any dbms of choice can also be used.
+
 
 Tailwind is a powerful css library for styling html pages. A tutorial can help familiarise with it
